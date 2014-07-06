@@ -55,9 +55,7 @@ and open the template in the editor.
                 <address>
                     Luz Christina Gaitán Torres
                     <br />
-                    Email: christina.gaitan@gmail.com &middot; Tel: 312 122 57 40 
-                    <br/>
-                     Lapislázuli #1858 &middot; Fracc. Diamantes &middot; Colima, Colima.
+                    christina.gaitan@gmail.com
                 </address>
             </div> <!-- Fin pie -->
             <br/>
