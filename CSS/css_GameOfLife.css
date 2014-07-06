@@ -1,8 +1,3 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
     Created on : 5/07/2014, 03:29:05 PM
     Author     : Christina
@@ -65,9 +60,6 @@ body {
 	}
 
 
-
-
-
 #parametros {
 	border-top: 1px solid #8c8c8c;	
         background-color: #ffffff;
@@ -96,7 +88,6 @@ form {
 }
 
 #areatexto {
-    
 	border-top: 1px solid #8c8c8c;		
         background-color: #ffffff;
         width:100%;
@@ -136,28 +127,3 @@ address {
 	letter-spacing: 2px;
 	line-height: 1.5 em;
 }
-
-
-
-.skiplink {
-	display:none;
-}
-
-p, ul {
-	margin-top: 0;
-	margin-right: 0;
-	margin-bottom: 1em;
-	margin-left: 0;
-}
-
-ul ul {
-	margin:0;
-}
-
-li {
-	margin-top:0;
-	margin-right:0;
-	margin-bottom:0;
-	margin-left:1em;
-}
-

@@ -20,10 +20,7 @@ and open the template in the editor.
         <div id="wrapper">
             <div id="encabezado">
                 <a target="blank" href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">Game of Life</a>
-                
             </div>  <!-- Fin encabezado -->
-
-
             
             <div id="parametros">
                 <br/>
@@ -51,28 +48,23 @@ and open the template in the editor.
                 </form>
             </div> <!-- Fin parametros -->
             <br/>
-
             
             <div id="areatexto">
-
             </div> <!-- Fin areatexto -->
 
-             <div id="datos">
-                
+            <div id="datos">
                 <address>
                     Luz Christina Gaitán Torres
                     <br />
-                    Email christina.gaitan@gmail.com &middot; Tel 312 122 57 40 
+                    Email: christina.gaitan@gmail.com &middot; Tel: 312 122 57 40 
                     <br/>
                      Lapislázuli #1858 &middot; Fracc. Diamantes &middot; Colima, Colima.
                 </address>
             </div> <!-- Fin pie -->
-            
             <br/>
-    </div> <!-- Fin #wrapper -->
-
-
-
-</body>
+            
+        </div> <!-- Fin #wrapper -->
+        
+    </body>
 </html>
 
