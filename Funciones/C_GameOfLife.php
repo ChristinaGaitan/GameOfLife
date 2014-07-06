@@ -71,7 +71,7 @@
         
         echo "<script>"
         . "     var arrayGreenIds = [$strIdCanvasGreen]; "
-        . "     pintar(arrayGreenIds,'Green');"
+        . "     pintar(arrayGreenIds,'#801638');"
         . "     var arrayWhiteIds = [$strIdCanvasWhite]; "
         . "     pintar(arrayWhiteIds,'White');"
         . "</script>";

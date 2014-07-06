@@ -4,95 +4,75 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
     <head>
-        <meta charset="UTF-8">
-        <title></title>
-        <script>
-            function pintar(arrayIdCanvas,color)
-            {
-                arrayIdCanvas.forEach(function(idCanvas) {
-                    var c = document.getElementById(idCanvas);
-                    var ctx = c.getContext("2d");
-                    ctx.fillStyle = color;
-                    ctx.fillRect(0,0,c.width,c.height);
-                });
-            }
-            
-            function updateValor(idLabel,valor)
-            {
-                var l = document.getElementById(idLabel);
-                l.textContent=valor;
-
-            }
-
-        </script>
-
-        <style>
-            #divTablero
-            {
-                text-align: center;
-                font-size: 1px;
-            }
-</style>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Game of Life</title>
+        
+        <link href="CSS/css_GameOfLife.css" rel="stylesheet" type="text/css" media="screen"/>
+        <script type="text/javascript" src="JavaScript/js_GameOfLife.js"></script>
+        <script type="text/javascript" src="JavaScript/jquery-1.11.1.min.js"></script>
 
     </head>
-    <body>
-        <?php
-            include ('Funciones/M_GameOfLife.php');
-            include ('Funciones/C_GameOfLife.php');
-            include ('Funciones/M_Generales.php');
-            
-            $tamanioX = $_POST['tamanioX'];
-            $tamanioY = $_POST['tamanioY'];
-            $numGeneraciones = $_POST['numGeneraciones'];
-        ?>
-        <form name="form" action="" method="post">
-           
-            <label for="tamanioX">Tamaño del grid en X: </label>
-            <input type="number" name="tamanioX" min="2" max="100" value="<?php echo $tamanioX;?>">
-            <br/>
-            <label for="tamanioY">Tamaño del grid en Y: </label>
-            <input type="number" name="tamanioY" min="2" max="100" value="<?php echo $tamanioY;?>">
-            <br/>
-            <label for="numGeneraciones">Numero de Generaciones: </label>
-            <input type="number" name="numGeneraciones" min="1" max="10000"
-                   value="<?php if($numGeneraciones==0) echo(1000);
-                                else echo $numGeneraciones;?>">
-            <br/>
-            <input type="submit" value="Iniciar" name="iniciar">
-            
-            <br/>
-            <label>Generacion: </label>
-            <label id="numGeneracion">0 </label>
-        </form>
-        <div id="divTablero">
+    
+    <body id="inicio">
+        <div id="wrapper">
+            <div id="encabezado">
+                <a target="blank" href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life">Game of Life</a>
+                
+            </div>  <!-- Fin encabezado -->
 
-            <?php
-                $tamanioGrid = $tamanioX*$tamanioY;
-                if (($tamanioGrid>0) && ($numGeneraciones>0))
-                {
-                    
-                    $anchoBox = 10;
-                    $altoBox = 10;
-                    $secSleep = 2;
-                    
-                    set_time_limit (($numGeneraciones+1)*$secSleep);
-                    
-                    dibujarTableroCanvas($tamanioX,$tamanioY,$anchoBox,$altoBox);
-                    $tableroActual=bigBang($tamanioY,$tamanioX);
-                    
-                    for ($g=1;$g<=$numGeneraciones;$g++)
-                    {
-                        colorearTableroCanvas($tableroActual);
-                        echo "<script>updateValor('numGeneracion','".$g."');</script>";
-                        sleep(1);
-                        flush($secSleep);
+
+            
+            <div id="parametros">
+                <br/>
+                <form name="form" action="" method="post">
+
+                    <label for="tamanioX">Número de columnas: </label>
+                    <input type="number" id="tamanioX" name="tamanioX" min="2" value="<?php echo $tamanioX;?>">
+                    <br/>
+                    <label for="tamanioY">Número de filas: </label>
+                    <input type="number" id="tamanioY" name="tamanioY" min="2" value="<?php echo $tamanioY;?>">
+                    <br/>
+                    <label for="velocidad">Velocidad (segundos): </label>
+                    <input type="number" id="velocidad" step="0.1" name="velocidad" min="0" 
+                           value="<?php if($velocidad==0){echo "1";}
+                                        else {echo $velocidad;}?>">
+                    <br/>
+                    <input type="hidden" id="jsonHidden" name="jsonHidden"
+                           value="">
                         
-                        $tableroActual = jugarConCelulas($tableroActual);
-                    }//Fin for Numero de generacion
-                }
-            ?>
-        </div>
-    </body>
+                    <input type="button" href="javascript:;" 
+                           onclick="iniciarProceso($('#tamanioX').val(),
+                                                    $('#tamanioY').val(),
+                                                    $('#velocidad').val());return false;" 
+                           value="Iniciar" name="iniciar">
+                </form>
+            </div> <!-- Fin parametros -->
+            <br/>
+
+            
+            <div id="areatexto">
+
+            </div> <!-- Fin areatexto -->
+
+             <div id="datos">
+                
+                <address>
+                    Luz Christina Gaitán Torres
+                    <br />
+                    Email christina.gaitan@gmail.com &middot; Tel 312 122 57 40 
+                    <br/>
+                     Lapislázuli #1858 &middot; Fracc. Diamantes &middot; Colima, Colima.
+                </address>
+            </div> <!-- Fin pie -->
+            
+            <br/>
+    </div> <!-- Fin #wrapper -->
+
+
+
+</body>
 </html>
+
