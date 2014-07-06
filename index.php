@@ -27,15 +27,14 @@ and open the template in the editor.
                 <form name="form" action="" method="post">
 
                     <label for="tamanioX">Número de columnas: </label>
-                    <input type="number" id="tamanioX" name="tamanioX" min="2" value="<?php echo $tamanioX;?>">
+                    <input type="number" id="tamanioX" name="tamanioX" min="2" value="25">
                     <br/>
                     <label for="tamanioY">Número de filas: </label>
-                    <input type="number" id="tamanioY" name="tamanioY" min="2" value="<?php echo $tamanioY;?>">
+                    <input type="number" id="tamanioY" name="tamanioY" min="2" value="25">
                     <br/>
                     <label for="velocidad">Velocidad (segundos): </label>
                     <input type="number" id="velocidad" step="0.1" name="velocidad" min="0" 
-                           value="<?php if($velocidad==0){echo "1";}
-                                        else {echo $velocidad;}?>">
+                           value="1">
                     <br/>
                     <input type="hidden" id="jsonHidden" name="jsonHidden"
                            value="">
